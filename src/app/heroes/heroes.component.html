@@ -1,1 +1,62 @@
-<h2>{{hero}}</h2>
+<div class="pizza_panel">
+  <ul class="toppings">
+    <h5>Veg Toppings</h5>
+    <li *ngFor="let topping of toppings">
+      <button type="button" disabled>
+          {{topping.name}}(${{topping.price}})
+      </button>
+    </li>
+  </ul>
+  <ul class="toppings" *ngFor="let item of [0,1,2,3]">
+    <h5>{{pizatype[item].name}}(${{pizatype[item].price}})</h5>
+    <li *ngFor="let topping of toppings">
+      <button type="button" [class.selected]="onSelected(topping, item)" (click)="onSelect(topping, item)">
+          
+      </button>
+    </li>
+  </ul>
+</div>
+<h5>Non Veg Toppings</h5>
+<div class="pizza_panel">
+  <ul class="toppings">
+    <li *ngFor="let ntopping of ntoppings">
+      <button type="button" disabled>
+          {{ntopping.name}}(${{ntopping.price}})
+      </button>
+    </li>
+  </ul>
+  <ul class="toppings" *ngFor="let item of [0,1,2,3]">
+    <li *ngFor="let ntopping of ntoppings">
+      <button type="button" [class.selected]="onSelected(ntopping, item)" (click)="onSelect(ntopping, item)">
+          
+      </button>
+    </li>
+  </ul>
+</div>
+<h5>Total</h5>
+<div class="pizza_panel">
+  <ul class="toppings">
+    <li>
+      <button type="button" disabled>
+          Offer
+      </button>
+    </li>
+    <li>
+      <button type="button" disabled>
+          
+      </button>
+    </li>
+  </ul>
+  <ul class="toppings" *ngFor="let item of [0,1,2,3]">
+    <li>
+      <button type="button" disabled>
+          {{totalPrice(item).offer}}
+      </button>
+    </li>
+    <li>
+      <button type="button" disabled>
+          ${{totalPrice(item).price}}
+      </button>
+    </li>
+  </ul>
+</div>
