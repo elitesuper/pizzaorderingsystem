@@ -5,7 +5,10 @@
   margin-block-end: 0px;
 }
 .selected{
-  background-color: green;
+  background-image: url('/assets/images/download_icon.png');
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 50% 50%;
 }
 .pizza_panel{
   display: flex;
